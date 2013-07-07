@@ -2,4 +2,7 @@ node_modules
 .tmp
 .sass-cache
 app/bower_components
+<<<<<<< HEAD
 twitter_config.rb
+=======
+>>>>>>> ef01c8b1e20b9bc632148d0885a61d0b771450d1
