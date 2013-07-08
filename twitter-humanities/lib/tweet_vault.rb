@@ -10,26 +10,29 @@ class TweetVault
 
   extend Forwardable
   
-  attr_reader :tweeters, :concepts
-
   def initialize
-    @query ||= parser.add_tweets
-    @tweeters ||= ranker.rank_tweeters(tweets)
-    @concepts ||= ranker.rank_concepts(all_words)
   end
   
+  def tweeters
+    ranker.rank_tweeters(tweets)
+  end
+  
+  def concepts
+    ranker.rank_concepts(all_words)
+  end
+
   private
 
+  def query
+    @query ||= parser.add_tweets
+  end
+
   def tweets
-    @tweets   ||= @query[0]
+    @tweets   ||= parser.populate
   end
 
   def tweet_texts
     tweets.map {|tweet| tweet.text }
-  end
-
-  def since_id
-    @since_id ||= @query[1]
   end
 
   def parser

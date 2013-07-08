@@ -18,17 +18,17 @@ describe TweetRanker do
     let(:ranker) { TweetRanker.new.rank_tweeters(tweets) }
 
     it "should return the most popular authors" do
-      ranker.size.must_equal 8
+      ranker.size.must_equal 7
     end 
 
     it "should have Ar_Arrr with 2 tweets as the first tweeter" do
-      ranker.first[0].must_equal "Ar_Arrr"
+      ranker.first[0].must_equal "yasmeenpotpot"
       ranker.first[1].must_equal 2
     end
 
     it "should have TLTP with 10 tweets as the last tweeter" do
       ranker.last[0].must_equal "TLTP"
-      ranker.last[1].must_equal 7
+      ranker.last[1].must_equal 10
     end
   end
 
@@ -41,12 +41,12 @@ describe TweetRanker do
     end
     
     it "should have much with 2 tweets as the first concept" do
-      ranker.first[0].must_equal "physics" 
+      ranker.first[0].must_equal "physics"
       ranker.first[1].must_equal 2 
     end
 
     it "should have new with 2 tweets as the last concept" do
-      ranker.last[0].must_equal "white" 
+      ranker.last[0].must_equal "tltp:" 
       ranker.last[1].must_equal 2 
     end
   end

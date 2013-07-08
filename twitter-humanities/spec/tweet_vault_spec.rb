@@ -13,11 +13,11 @@ describe TweetVault do
 
   describe "#tweeters" do
     it "should return the 10 most active tweeters" do
-      vault.tweeters.size.must_equal 8
+      vault.tweeters.size.must_equal 10
     end
   end
 
-  describe "#tweeters" do
+  describe "#concepts" do
     it "should return the 10 most tweeted concepts" do
       vault.concepts.size.must_equal 10
     end
