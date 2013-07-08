@@ -21,6 +21,12 @@ describe TweetVault do
       tweets.size.must_equal number_of_tweets
     end
   end
+  
+  describe "#since_id" do
+    it "should store the since_id" do
+      vault.since_id.must_be :>=, 0
+    end
+  end
 
   describe "#tweeters" do
     it "should return the authors" do

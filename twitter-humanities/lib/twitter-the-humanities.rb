@@ -10,18 +10,35 @@ class TweetVault
 
   extend Forwardable
 
-  attr_reader :tweets, :filter, :ranker
+  attr_reader :tweets, :since_id
   
   def_delegator :filter, :filter_words
-  def_delegator :ranker, :rank_tweeters
-  def_delegator :ranker, :rank_concepts
+  def_delegator :ranker, :rank_tweeters, :rank_concepts
 
   def initialize
-    @tweets ||= TweetParser.new.add_tweets
-    @filter ||= TweetFilter.new
-    @ranker ||= TweetRanker.new
+    @query ||= parser.add_tweets
   end
   
+  def tweets
+    @tweets   ||= @query[0]
+  end
+
+  def since_id
+    @since_id ||= @query[1]
+  end
+
+  def parser
+    @parser   ||= TweetParser.new
+  end
+
+  def filter
+    @filter   ||= TweetFilter.new
+  end
+
+  def ranker
+    @ranker   ||= TweetRanker.new
+  end
+
   def tweeters
     tweets.map { |tweet| tweet.user.screen_name }
   end
