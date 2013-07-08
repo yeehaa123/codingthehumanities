@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe TweetRanker do
   let(:vault)     { TweetVault.new }
-  let(:tweets)    { vault.tweets }
-  let(:all_words) { vault.all_words } 
+  let(:tweets)    { vault.send(:tweets) }
+  let(:all_words) { vault.send(:all_words)} 
 
   before do
     VCR.insert_cassette 'twitter-humanities'
