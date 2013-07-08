@@ -8,4 +8,4 @@ VCR.configure do |c|
   c.hook_into :webmock
 end
 
-require_relative '../lib/twitter-the-humanities.rb'
+require_relative '../lib/tweet_vault'
