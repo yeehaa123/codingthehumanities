@@ -1,5 +1,4 @@
 require 'twitter'
-require 'forwardable'
 
 require_relative '../config/twitter_config'
 require_relative 'tweet_filter'
@@ -8,33 +7,26 @@ require_relative 'tweet_parser'
 
 class TweetVault
   
-  extend Forwardable
-  
-  def_delegator :parser, :all_words
+  def initialize(amount_of_tweets = 100)
+    @parser ||= TweetParser.new(amount_of_tweets)
+    @ranker ||= TweetRanker.new
+  end
 
   def tweeters
-    ranker.rank_tweeters(unranked_tweeters)
+    @ranker.rank_tweeters(unranked_tweeters)
   end
   
   def concepts
-    ranker.rank_concepts(all_words)
+    @ranker.rank_concepts(words)
   end
 
   private
   
   def unranked_tweeters
-    parser.tweeters
+    @parser.tweeters
   end
 
-  def all_words
-    parser.words
-  end
-
-  def parser
-    @parser ||= TweetParser.new(100)
-  end
-
-  def ranker
-    @ranker ||= TweetRanker.new
+  def words
+    @parser.words
   end
 end

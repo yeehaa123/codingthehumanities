@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TweetRanker do
   let(:parser)    { TweetParser.new(100)}
   let(:tweets)    { parser.tweets}
-  let(:all_words) { parser.words }
+  let(:words)     { parser.words }
   let(:tweeters)  { parser.tweeters }
 
   before do
@@ -35,7 +35,7 @@ describe TweetRanker do
 
   describe "#ranked_concepts" do
 
-    let(:ranker) { TweetRanker.new.rank_concepts(all_words) }
+    let(:ranker) { TweetRanker.new.rank_concepts(words) }
 
     it "should return 10 concepts" do
       ranker.size.must_equal 10
