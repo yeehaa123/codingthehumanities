@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe TweetParser do
-  let(:parser)    { TweetParser.new }
-  let(:tweets)    { parser.add_tweets[0] }
-  let(:since_id)  { parser.add_tweets[1] }
+  let(:parser)          { TweetParser.new(population_size) }
+  let(:tweets)          { parser.tweets }
+  let(:tweeters)        { parser.tweeters }
+  let(:words)           { parser.words }
+  let(:population_size) { 100 }
 
   before do
     VCR.insert_cassette 'twitter-humanities'
@@ -13,34 +15,22 @@ describe TweetParser do
     VCR.eject_cassette
   end
 
-  describe "#add_tweets" do
-
-    it "should return all elements" do
-      parser.add_tweets[0].size.must_equal 99
-    end
-  
-    it "should store the since_id" do
-      parser.add_tweets[1].must_be :>=, 0
-    end
-  end
-
-  describe "#more_tweets" do
-    before do
-      parser.add_tweets
-    end
-    
-    it "should return all elements" do
-      parser.add_tweets[0].size.must_equal 100
-    end
-
-    it "should have a different since_id" do
-      parser.add_tweets[1].wont_equal since_id
-    end
-  end
-
   describe "#populate" do
     it "should return all elements" do
-      parser.populate.uniq.size.must_equal 628
+      tweets.size.must_be :>=, population_size
+    end
+  end
+
+  describe "#tweeters" do
+    it "should return all tweeters" do
+      tweeters.size.must_equal population_size
+      tweeters.uniq.size.must_be :<,  population_size
+    end
+  end
+  
+  describe "#words" do
+    it "should return all words" do
+      words.size.must_equal 1070
     end
   end
 end

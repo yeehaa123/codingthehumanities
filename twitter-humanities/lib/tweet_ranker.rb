@@ -1,8 +1,9 @@
 class TweetRanker
-  def rank_tweeters(tweets)
+
+  def rank_tweeters(tweeters)
     unranked_tweeters = Hash.new(0)
-    tweets.each do |tweet|
-      unranked_tweeters[tweet.user.screen_name] += 1 
+    tweeters.each do |tweeter|
+      unranked_tweeters[tweeter] += 1 
     end
     rank(unranked_tweeters)
   end

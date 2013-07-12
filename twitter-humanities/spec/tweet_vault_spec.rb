@@ -13,7 +13,7 @@ describe TweetVault do
 
   describe "#tweeters" do
     it "should return the 10 most active tweeters" do
-      vault.tweeters.size.must_equal 10
+      vault.tweeters.size.must_equal 8
     end
   end
 

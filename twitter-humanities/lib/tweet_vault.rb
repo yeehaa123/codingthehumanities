@@ -7,14 +7,13 @@ require_relative 'tweet_ranker'
 require_relative 'tweet_parser'
 
 class TweetVault
-
+  
   extend Forwardable
   
-  def initialize
-  end
-  
+  def_delegator :parser, :all_words
+
   def tweeters
-    ranker.rank_tweeters(tweets)
+    ranker.rank_tweeters(unranked_tweeters)
   end
   
   def concepts
@@ -22,35 +21,20 @@ class TweetVault
   end
 
   private
-
-  def query
-    @query ||= parser.add_tweets
-  end
-
-  def tweets
-    @tweets   ||= parser.populate
-  end
-
-  def tweet_texts
-    tweets.map {|tweet| tweet.text }
-  end
-
-  def parser
-    @parser   ||= TweetParser.new
-  end
-
-  def filter
-    @filter   ||= TweetFilter.new
-  end
-
-  def ranker
-    @ranker   ||= TweetRanker.new
+  
+  def unranked_tweeters
+    parser.tweeters
   end
 
   def all_words
-    words = []
-    tweet_texts.each { |tweet| words << tweet.split(" ") }
-    words = words.flatten
-    filter.filter_words(words)
+    parser.words
+  end
+
+  def parser
+    @parser ||= TweetParser.new(100)
+  end
+
+  def ranker
+    @ranker ||= TweetRanker.new
   end
 end

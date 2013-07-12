@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe TweetRanker do
-  let(:vault)     { TweetVault.new }
-  let(:tweets)    { vault.send(:tweets) }
-  let(:all_words) { vault.send(:all_words)} 
+  let(:parser)    { TweetParser.new(100)}
+  let(:tweets)    { parser.tweets}
+  let(:all_words) { parser.words }
+  let(:tweeters)  { parser.tweeters }
 
   before do
     VCR.insert_cassette 'twitter-humanities'
@@ -15,20 +16,20 @@ describe TweetRanker do
 
   describe "#rank_tweeters" do
 
-    let(:ranker) { TweetRanker.new.rank_tweeters(tweets) }
+    let(:ranker) { TweetRanker.new.rank_tweeters(tweeters) }
 
     it "should return the most popular authors" do
-      ranker.size.must_equal 7
+      ranker.size.must_equal 8
     end 
 
-    it "should have Ar_Arrr with 2 tweets as the first tweeter" do
-      ranker.first[0].must_equal "yasmeenpotpot"
+    it "should have GregBrennen with 2 tweets as the first tweeter" do
+      ranker.first[0].must_equal "GregBrennen"
       ranker.first[1].must_equal 2
     end
 
-    it "should have TLTP with 10 tweets as the last tweeter" do
-      ranker.last[0].must_equal "TLTP"
-      ranker.last[1].must_equal 10
+    it "should have rwpickard with 10 tweets as the last tweeter" do
+      ranker.last[0].must_equal "rwpickard"
+      ranker.last[1].must_equal 3
     end
   end
 
@@ -41,12 +42,12 @@ describe TweetRanker do
     end
     
     it "should have much with 2 tweets as the first concept" do
-      ranker.first[0].must_equal "physics"
+      ranker.first[0].must_equal ""
       ranker.first[1].must_equal 2 
     end
 
     it "should have new with 2 tweets as the last concept" do
-      ranker.last[0].must_equal "tltp:" 
+      ranker.last[0].must_equal "1960s" 
       ranker.last[1].must_equal 2 
     end
   end
