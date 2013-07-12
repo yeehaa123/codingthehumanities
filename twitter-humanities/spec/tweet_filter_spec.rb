@@ -3,14 +3,22 @@ require 'spec_helper'
 describe TweetFilter do
   
   let(:filter) { TweetFilter.new }
+  
+  it "should filter out tweeters" do
+    tweets = "Hey @to%maama, let's go to @dgjshg tomorrow".split(/\s+/)
+    filter.filter_words(tweets).wont_include "@to%maama"
+    filter.filter_words(tweets).wont_include "@dgjshg"
+    filter.filter_words(tweets).must_include "tomorrow"
+  end
 
   it "should clean up words" do
-    dirty_words = %w{@bla bla, bla. bla#}
+    dirty_words = %w{@bla bla, bla. /bla bla#}
     filter.filter_words(dirty_words).must_include "bla"
     filter.filter_words(dirty_words).wont_include "@bla"
     filter.filter_words(dirty_words).wont_include "bla,"
     filter.filter_words(dirty_words).wont_include "bla."
     filter.filter_words(dirty_words).wont_include "bla#"
+    filter.filter_words(dirty_words).wont_include "/bla"
   end
 
   it "should remove hyperlinks" do

@@ -42,12 +42,12 @@ describe TweetRanker do
     end
     
     it "should have much with 2 tweets as the first concept" do
-      ranker.first[0].must_equal ""
+      ranker.first[0].must_equal "research"
       ranker.first[1].must_equal 2 
     end
 
     it "should have new with 2 tweets as the last concept" do
-      ranker.last[0].must_equal "1960s" 
+      ranker.last[0].must_equal "perspective" 
       ranker.last[1].must_equal 2 
     end
   end

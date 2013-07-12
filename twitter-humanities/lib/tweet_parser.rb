@@ -16,7 +16,7 @@ class TweetParser
 
   def words
     words = []
-    tweets.each { |tweet| words << tweet.split(" ") }
+    tweets.each { |tweet| words << tweet.split(/\s+/) }
     words = words.flatten
     filter.filter_words(words)
   end
