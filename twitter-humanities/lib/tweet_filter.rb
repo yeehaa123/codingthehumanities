@@ -18,13 +18,16 @@ class TweetFilter
   end
 
   def clean_words(words)
-    clean_regex = /[\/\"\,\@\.\#\:]/
+    clean_regex = /[\/\"\,\@\.\#\:\-\d\!]/
     words.map! { |word| word.downcase.gsub(clean_regex, "") }
     words.reject { |word| word if word == "" }
   end
 
   def filter_trivial_words(words)
-    trivial_words = %w{humanities Humanities and oh know chelmsford have or is on the of for by to de RT the we how tawanan with yay zemon you what was saying}
+    trivial_words = <<-EOL 
+humanities Humanities and oh know chelmsford have or is on the of for by to de RT the we how tawanan with yay zemon you what was saying without add day are ng ang any apchemalso through bexley big
+them than they
+    EOL
     words.reject { |word| word if trivial_words.include? word }
   end
 end

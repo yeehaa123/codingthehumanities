@@ -42,7 +42,7 @@ describe TweetRanker do
     end
     
     it "should have much with 2 tweets as the first concept" do
-      ranker.first[0].must_equal "research"
+      ranker.first[0].must_equal "female"
       ranker.first[1].must_equal 2 
     end
 
