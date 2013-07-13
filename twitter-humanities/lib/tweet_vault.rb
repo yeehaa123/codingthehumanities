@@ -1,5 +1,4 @@
 
-require_relative '../config/twitter_config'
 require_relative 'tweet_filter'
 require_relative 'tweet_ranker'
 require_relative 'tweet_parser'

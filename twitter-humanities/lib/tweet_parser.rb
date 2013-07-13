@@ -1,4 +1,5 @@
 require 'twitter'
+require_relative '../config/twitter_config'
 
 class TweetParser
   attr_reader :tweets
