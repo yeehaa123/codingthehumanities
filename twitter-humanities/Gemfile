@@ -8,3 +8,5 @@ group :development do
   gem 'vcr'
   gem 'webmock'
 end
+
+gem 'sinatra'

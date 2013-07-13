@@ -1,3 +1,5 @@
+require 'twitter'
+
 class TweetParser
   attr_reader :tweets
 
@@ -52,5 +54,4 @@ class TweetParser
   def filter
     TweetFilter.new
   end
-
 end

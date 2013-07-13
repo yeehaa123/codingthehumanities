@@ -22,14 +22,14 @@ describe TweetRanker do
       ranker.size.must_equal 8
     end 
 
-    it "should have GregBrennen with 2 tweets as the first tweeter" do
-      ranker.first[0].must_equal "GregBrennen"
-      ranker.first[1].must_equal 2
+    it "should have rwpickard with 2 tweets as the first tweeter" do
+      ranker.first[0].must_equal "rwpickard"
+      ranker.first[1].must_equal 3
     end
 
-    it "should have rwpickard with 10 tweets as the last tweeter" do
-      ranker.last[0].must_equal "rwpickard"
-      ranker.last[1].must_equal 3
+    it "should have GreggBrennen with 10 tweets as the last tweeter" do
+      ranker.last[0].must_equal "GregBrennen"
+      ranker.last[1].must_equal 2
     end
   end
 
@@ -42,13 +42,13 @@ describe TweetRanker do
     end
     
     it "should have much with 2 tweets as the first concept" do
-      ranker.first[0].must_equal "female"
-      ranker.first[1].must_equal 2 
+      ranker.first[0].must_equal "national"
+      ranker.first[1].must_equal 17 
     end
 
     it "should have new with 2 tweets as the last concept" do
-      ranker.last[0].must_equal "perspective" 
-      ranker.last[1].must_equal 2 
+      ranker.last[0].must_equal "decline" 
+      ranker.last[1].must_equal 9 
     end
   end
 end

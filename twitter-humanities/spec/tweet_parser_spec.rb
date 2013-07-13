@@ -30,7 +30,7 @@ describe TweetParser do
   
   describe "#words" do
     it "should return all words" do
-      words.size.must_equal 1070
+      words.size.must_equal 664
     end
   end
 end
