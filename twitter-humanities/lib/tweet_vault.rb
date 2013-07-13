@@ -1,4 +1,3 @@
-require 'twitter'
 
 require_relative '../config/twitter_config'
 require_relative 'tweet_filter'

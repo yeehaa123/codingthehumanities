@@ -1,8 +1,12 @@
 require 'sinatra'
 require_relative './lib/tweet_vault'
 
-get '/' do
-  name = TweetVault.new.tweeters[1][0]
-  number = TweetVault.new.tweeters[1][1]
-  "#{name}: #{number}"
+get '/api/concepts' do
+  content_type :json
+  TweetVault.new.concepts.to_json
+end
+
+get '/api/tweeters' do
+  content_type :json
+  TweetVault.new.tweeters.to_json
 end
