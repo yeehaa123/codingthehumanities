@@ -21,14 +21,14 @@ class TweetParser
     filter.filter_words(words)
   end
 
+  private
+
   def populate(population_size)
     loop do
       add_tweets
       break tweets if tweets.size >= population_size
     end
   end
-
-  private
 
   def tweet_texts(tweets)
     tweets.map {|tweet| tweet.text }

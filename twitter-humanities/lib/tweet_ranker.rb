@@ -21,6 +21,6 @@ class TweetRanker
   def rank(rankable)
     rankable.select! {|name, count| count >= 2}
     ranked_by_name = rankable.sort_by {|name, count| name } 
-    ranked_by_count = ranked_by_name.sort_by {|name, count| count }.take(10) 
+    ranked_by_count = ranked_by_name.sort_by {|name, count| count }.reverse.take(10)
   end
 end
