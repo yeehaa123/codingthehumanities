@@ -44,7 +44,7 @@ section
   border-bottom: 2px solid $orange
 
 div.span3
-  margin: 6px 6px 6px 6px
+  margin: 10px 6px 10px 6px
   text-align: center
   background-color: $base02
   color: $base2
@@ -60,13 +60,28 @@ div.span6
     text-align: center
     color: $base02
     background: $base2
-    +adjust-font-size-to(27px)
-    +adjust-leading-to(5, 27px)
+    +adjust-font-size-to(24px)
+    +adjust-leading-to(5, 24px)
   
+div.span6:first-child
   div:nth-child(5)
     color: $base3
     background: $orange
 
-  div:nth-child(2n)
+  div:nth-child(4n)
     background: $base3
     color: $base2
+
+div.span6:last-child
+
+  div:nth-child(1n)
+    background: $base3
+    color: $base2
+
+  div:nth-child(4n+2)
+    color: $base02
+    background: $base2
+
+  div:nth-child(9)
+    color: $base3
+    background: $orange
