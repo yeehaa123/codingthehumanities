@@ -34,22 +34,26 @@ h1
   +adjust-font-size-to(30px)
   text-align: right
   letter-spacing: -1px
-  border-bottom: 3px solid $orange
+  border-bottom: 2px solid $orange
   padding-left: 10px
-  +trailer(1)
+  +leader(1, 30px)
+  +trailer(1, 30px)
+
+section
+  +padding-trailer(2, 30px)
+  border-bottom: 2px solid $orange
 
 div.span6
   list-style-type: none
 
   div.span2
     margin: 6px 6px 6px 6px
-    +adjust-leading-to(3)
     font-weight: 300
     text-align: center
     color: $base02
     background: $base2
     +adjust-font-size-to(27px)
-    +adjust-leading-to(3)
+    +adjust-leading-to(5, 27px)
   
   div:nth-child(5)
     color: $base3
