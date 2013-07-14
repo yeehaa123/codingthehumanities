@@ -1,4 +1,6 @@
-@App = angular.module('codingTheHumanitiesApp', [])
+'use strict'
+
+@App = angular.module('app', [])
 
 @App.config ($routeProvider) ->
   $routeProvider
