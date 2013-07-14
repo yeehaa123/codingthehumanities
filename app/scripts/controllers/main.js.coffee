@@ -1,4 +1,4 @@
-@MainCtrl = ($scope) ->
+@MainCtrl = ['$scope', ($scope) ->
   $scope.concepts = [
     'hiring',
     'art',
@@ -28,3 +28,4 @@
   ]
   
   $scope.title = "Coding the Humanities"
+]
