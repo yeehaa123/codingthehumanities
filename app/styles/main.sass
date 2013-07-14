@@ -30,9 +30,6 @@ $base-line-height: 30px
 body
   font-family: 'Codystar', cursive
 
-section
-  height: 540px
-
 h1 
   +adjust-font-size-to(30px)
   text-align: right
@@ -42,23 +39,41 @@ h1
   +leader(1, 30px)
   +trailer(1, 30px)
 
+  a
+    +unstyled-link
+
+    &:hover
+      +unstyled-link
+
 section
   +padding-trailer(2, 30px)
+
+  div.text
+    background-color: $base2
+    +box-sizing(border-box)
+    height: 512px
+
+    h2
+      margin: 16px
 
 footer
   border-top: 2px solid $red
 
-div.span3
-  margin: 10px 7px 10px 7px
-  text-align: center
-  background-color: $base02
-  color: $base2
-  +adjust-font-size-to(20px)
-  +adjust-leading-to(2, 20px)
+  div.span3
+    margin: 0 7px 0 7px
+    text-align: center
+    background-color: $base02
+    color: $base2
+    +adjust-font-size-to(20px)
+    +adjust-leading-to(2, 20px)
+    +leader(1, 20px)
 
-  &:hover
-    background-color: $red
-    color: $base3
+    a
+      +unstyled-link
+
+    &:hover
+      background-color: $red
+      color: $base3
 
 div.span6
   list-style-type: none
