@@ -31,9 +31,12 @@ body
   font-family: 'Codystar', cursive
 
 h1 
-  +adjust-font-size-to(40px)
+  +adjust-font-size-to(30px)
+  text-align: right
   letter-spacing: -1px
-  border-bottom: 3px solid $red
+  border-bottom: 3px solid $orange
+  padding-left: 10px
+  color: $yellow
 
 div.span6
   list-style-type: none
@@ -43,7 +46,7 @@ div.span6
     +adjust-leading-to(3)
     font-weight: 300
     text-align: center
-    color: $red
+    color: $base02
     background: $base2
     +adjust-font-size-to(27px)
     +adjust-leading-to(3)
@@ -51,3 +54,7 @@ div.span6
   div:nth-child(5)
     color: $base3
     background: $orange
+
+  div:nth-child(2n)
+    background: $base3
+    color: $base2
