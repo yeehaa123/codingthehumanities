@@ -7,7 +7,7 @@ $base1:     #93a1a1
 $base2:     #eee8d5
 $base3:     #fdf6e3
 $yellow:    #b58900
-$orange:    #cb4b16
+$red:    #cb4b16
 $red:       #dc322f
 $magenta:   #d33682
 $violet:    #6c71c4
@@ -17,7 +17,7 @@ $green:     #859900
 
 $bodyBackground: $base3
 $headingsColor: $base03
-$textColor: $base03
+$textColor: $base02
 
 @import "bootstrap-sass/lib/bootstrap"
 @import "compass"
@@ -34,22 +34,28 @@ h1
   +adjust-font-size-to(30px)
   text-align: right
   letter-spacing: -1px
-  border-bottom: 2px solid $orange
+  border-bottom: 2px solid $red
   padding-right: 8px
   +leader(1, 30px)
   +trailer(1, 30px)
 
 section
   +padding-trailer(2, 30px)
-  border-bottom: 2px solid $orange
+
+footer
+  border-top: 2px solid $red
 
 div.span3
-  margin: 10px 6px 10px 6px
+  margin: 10px 7px 10px 7px
   text-align: center
   background-color: $base02
   color: $base2
   +adjust-font-size-to(20px)
   +adjust-leading-to(2, 20px)
+
+  &:hover
+    background-color: $red
+    color: $base3
 
 div.span6
   list-style-type: none
@@ -66,7 +72,7 @@ div.span6
 div.span6:first-child
   div:nth-child(5)
     color: $base3
-    background: $orange
+    background: $red
 
   div:nth-child(4n)
     background: $base3
@@ -84,4 +90,4 @@ div.span6:last-child
 
   div:nth-child(9)
     color: $base3
-    background: $orange
+    background: $red
