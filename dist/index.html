@@ -13,7 +13,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/e394fbf3.main.css">
+        <link rel="stylesheet" href="styles/8966eabf.main.css">
 </head>
   <body ng-app="codingTheHumanitiesApp">
     <!--[if lt IE 7]>
@@ -26,7 +26,21 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container" ng-controller="MainCtrl">
+      <header class="row">
+        <hgroup class="span12">
+          <h1><a ng-href="/">{{ title }}</a></h1>
+        </hgroup>
+      </header>
+      <section class="row" ng-view="">
+      </section>
+      <footer class-="row">
+        <div class="span3"><a href="#/vision">Vision</a></div>
+        <div class="span3">People</div>
+        <div class="span3">Events</div>
+        <div class="span3">Code</div>
+      </footer>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -38,7 +52,7 @@
 
     <script src="scripts/7b078f1f.angular.js"></script>
 
-    <script src="scripts/24afaf82.scripts.js"></script>
+    <script src="scripts/d33fbd95.scripts.js"></script>
 
         <script src="scripts/bd6ce9e3.plugins.js"></script>
 

@@ -1,5 +1,5 @@
 @MainCtrl = ['$scope', ($scope) ->
-  $scope.concepts = [
+  $scope.pastConcepts = [
     'hiring',
     'art',
     'degrees',
@@ -13,7 +13,7 @@
     'new'
   ]
 
-  $scope.concepts2 = [
+  $scope.futureConcepts = [
     'big data',
     'html',
     'learning',

@@ -2,11 +2,11 @@
   .config ($routeProvider) ->
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/_visualisation.html',
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        template: "<div class='text span12'>HELLO!!!!</div>"
       })
 
 @App.directive 'concepts', ->
