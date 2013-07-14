@@ -1,0 +1,13 @@
+<section class="row">
+  <h1>{{ title }}</h1>
+  <ul class='span6'>
+    <li class='span2' ng-repeat="concept in concepts">
+      {{ concept }}
+    </li>
+  </ul>
+  <ul class='span6'>
+    <li class='span2' ng-repeat="concept in concepts">
+      {{ concept }}
+    </li>
+  </ul>
+</section>

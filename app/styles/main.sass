@@ -15,34 +15,39 @@ $blue:      #268bd2
 $cyan:      #2aa198
 $green:     #859900
 
-$bodyBackground: $base03
-$headingsColor: $base3
-$textColor: $base3
+$bodyBackground: $base3
+$headingsColor: $base03
+$textColor: $base03
 
 @import "bootstrap-sass/lib/bootstrap"
 @import "compass"
+@import url(http://fonts.googleapis.com/css?family=Codystar)
 
 $base-font-size: 18px
 $base-line-height: 30px
 +establish-baseline
 
-
-html, body
-
-.navbar .brand
-
-body 
-  padding: 40px
+body
+  font-family: 'Codystar', cursive
 
 h1 
   +adjust-font-size-to(40px)
   letter-spacing: -1px
-  border-bottom: 7px solid $blue
+  border-bottom: 3px solid $red
 
-p, ol
-  +adjust-font-size-to(20px)
-  +leader(1, 20px)
-  +adjust-leading-to(1)
+div.span6
+  list-style-type: none
 
-li
-  color: $base0
+  div.span2
+    margin: 6px 6px 6px 6px
+    +adjust-leading-to(3)
+    font-weight: 300
+    text-align: center
+    color: $red
+    background: $base2
+    +adjust-font-size-to(27px)
+    +adjust-leading-to(3)
+  
+  div:nth-child(5)
+    color: $base3
+    background: $orange
