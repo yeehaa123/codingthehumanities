@@ -4,17 +4,9 @@
   </hgroup>
 </header>
 <section class="row">
-  <div class="span6">
-    <div class="span2" ng-repeat="concept in concepts">
-      {{ concept }}
-    </div>
-  </div>
-  <div class="span6">
-    <div class="span2" ng-repeat="concept in concepts2">
-      {{ concept }}
-    </div>
-  
-</div></section>
+  <concepts list="concepts"></concepts>
+  <concepts list="concepts2"></concepts>
+</section>
 <footer class-="row">
   <div class="span3">Vision</div>
   <div class="span3">People</div>
