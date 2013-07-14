@@ -1,5 +1,3 @@
-'use strict'
-
 @MainCtrl = ['$scope', ($scope) ->
   $scope.concepts = [
     'hiring',
