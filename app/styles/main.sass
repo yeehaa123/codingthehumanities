@@ -4,6 +4,7 @@ $base01:    #586e75
 $base00:    #657b83
 $base0:     #839496
 $base1:     #93a1a1
+$base1_5:   #DCDACB
 $base2:     #eee8d5
 $base3:     #fdf6e3
 $yellow:    #b58900
@@ -21,7 +22,7 @@ $textColor: $base02
 
 @import "bootstrap-sass/lib/bootstrap"
 @import "compass"
-@import url(http://fonts.googleapis.com/css?family=Codystar)
+@import url(http://fonts.googleapis.com/css?family=Abel|Codystar|Gudea)
 
 $base-font-size: 18px
 $base-line-height: 30px
@@ -49,12 +50,16 @@ section
   +padding-trailer(2, 30px)
 
   div.text
-    background-color: $base2
+    font-family: 'Abel', sans-serif
+    background-color: $base1
     +box-sizing(border-box)
-    height: 512px
+    height: 502px
+    padding: 20px
+    margin-top: 5px
 
-    h2
-      margin: 16px
+    h3
+      font-family: 'Abel', sans-serif
+      color: $base3
 
 footer
   border-top: 2px solid $red
@@ -62,9 +67,9 @@ footer
   div.span3
     margin: 0 7px 0 7px
     text-align: center
-    background-color: $base02
-    color: $base2
-    +adjust-font-size-to(20px)
+    background-color: $base03
+    color: $base3
+    +adjust-font-size-to(16px)
     +adjust-leading-to(2, 20px)
     +leader(1, 20px)
 
@@ -100,7 +105,7 @@ div.span6:last-child
 
   div:nth-child(1n)
     background: $base3
-    color: $base2
+    color: $base1_5
 
   div:nth-child(4n+2)
     color: $base02

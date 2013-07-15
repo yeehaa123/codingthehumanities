@@ -6,8 +6,7 @@
         controller: 'MainCtrl'
       })
       .otherwise({
-        template: "<div class='text span6'><h2>HELLO!!!!</h2></div>" +
-                  "<div class='text span6'><h2>HELLO!!!!</h2></div>"
+        templateUrl: 'views/_vision.html' 
       })
 
 @App.directive 'concepts', ->
