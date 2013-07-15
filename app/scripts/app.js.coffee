@@ -4,8 +4,15 @@
       .when('/', {
         templateUrl: 'views/_visualisation.html',
         controller: 'MainCtrl'
-      })
-      .otherwise({
+      }).when('/vision', {
+        templateUrl: 'views/_vision.html' 
+      }).when('/people', {
+        templateUrl: 'views/_people.html' 
+      }).when('/events', {
+        templateUrl: 'views/_events.html' 
+      }).when('/code', {
+        templateUrl: 'views/_code.html' 
+      }).otherwise({
         templateUrl: 'views/_vision.html' 
       })
 
