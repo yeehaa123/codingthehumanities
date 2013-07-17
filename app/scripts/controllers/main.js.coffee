@@ -1,31 +1,8 @@
-@MainCtrl = ['$scope', ($scope) ->
-  $scope.pastConcepts = [
-    'hiring',
-    'art',
-    'degrees',
-    'oxford',
-    'pay',
-    'survey',
-    'teacher',
-    'job',
-    'science',
-    'national',
-    'new'
-  ]
+@MainCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
+  concepts = conceptFactory
 
-  $scope.futureConcepts = [
-    'big data',
-    'html',
-    'learning',
-    'coding',
-    'art',
-    'research',
-    'literacy',
-    'css',
-    'creative',
-    'javascript',
-    'global'
-  ]
-  
+  $scope.pastConcepts = concepts.getPastConcepts() 
+
+  $scope.futureConcepts = concepts.getFutureConcepts() 
   $scope.title = "Coding the Humanities"
 ]
