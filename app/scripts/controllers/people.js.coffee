@@ -1,15 +1,5 @@
-@PeopleCtrl = ['$scope', ($scope) ->
-  $scope.peopleConcepts = [
-    '-',
-    'why',
-    '-',
-    '-',
-    'what',
-    'when'
-    'who',
-    '-',
-    'where',
-    '-',
-    'how'
-  ]
+@PeopleCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
+  concepts = conceptFactory
+
+  $scope.peopleConcepts = concepts.getVisionConcepts()
 ]
