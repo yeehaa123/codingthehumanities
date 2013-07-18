@@ -1,15 +1,5 @@
-@EventsCtrl = ['$scope', ($scope) ->
-  $scope.eventsConcepts = [
-    '-',
-    'why',
-    '-',
-    '-',
-    'what',
-    'when'
-    'who',
-    '-',
-    'where',
-    '-',
-    'how'
-  ]
+@EventsCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
+  concepts = conceptFactory
+
+  $scope.eventsConcepts = concepts.getVisionConcepts()
 ]

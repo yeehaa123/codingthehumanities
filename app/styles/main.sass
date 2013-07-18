@@ -90,30 +90,20 @@ div.span6
     margin: 6px 6px 6px 6px
     font-weight: 300
     text-align: center
-    color: $base02
-    background: $base2
     +adjust-font-size-to(24px)
     +adjust-leading-to(5, 24px)
-  
-div.span6:first-child
-  div:nth-child(5)
-    color: $base3
-    background: $red
-
-  div:nth-child(4n)
-    background: $base3
     color: $base1_5
 
-div.span6:last-child
-
-  div:nth-child(1n)
-    background: $base3
-    color: $base1_5
-
-  div:nth-child(4n+2)
+  div.ranked
     color: $base02
     background: $base2
 
-  div:nth-child(9)
-    color: $base3
-    background: $red
+  &:first-child
+    div:nth-child(3)
+      color: $base3
+      background: $red
+
+  &:last-child
+    div:nth-child(7)
+      color: $base3
+      background: $red

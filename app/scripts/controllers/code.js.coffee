@@ -1,15 +1,5 @@
-@CodeCtrl = ['$scope', ($scope) ->
-  $scope.codeConcepts = [
-    '-',
-    'why',
-    '-',
-    '-',
-    'what',
-    'when'
-    'who',
-    '-',
-    'where',
-    '-',
-    'how'
-  ]
+@CodeCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
+  concepts = conceptFactory
+
+  $scope.codeConcepts = concepts.getVisionConcepts()
 ]
