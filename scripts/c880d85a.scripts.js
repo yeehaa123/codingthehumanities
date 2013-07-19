@@ -1,1 +1,0 @@
-"use strict";angular.module("codingTheHumanitiesApp",[]).config(["$routeProvider",function(a){a.when("/",{templateUrl:"views/main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]),angular.module("codingTheHumanitiesApp").controller("MainCtrl",["$scope",function(a){a.concepts=["art","hiring","degrees","oxford","survey","pay","job","teacher","jobs"]}]);
