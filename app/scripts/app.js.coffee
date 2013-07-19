@@ -16,6 +16,9 @@
       }).when('/code', {
         templateUrl: 'views/_code.html' 
         controller: 'CodeCtrl'
+      }).when('/test', {
+        templateUrl: 'views/_code.html' 
+        controller: 'TestCtrl'
       }).otherwise({
         redirectTo: '/' 
       })
