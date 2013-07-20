@@ -49,6 +49,14 @@ h1
     &:hover
       +unstyled-link
 
+
+.animate-enter
+  +transition(1s linear all)
+  opacity: 0
+
+.animate-enter.animate-enter-active
+  opacity: 1
+
 section
   +padding-trailer(2, 30px)
 

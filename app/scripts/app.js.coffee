@@ -3,7 +3,7 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/_visualisation.html',
-        controller: 'MainCtrl'
+        controller: 'VisualisationCtrl'
       }).when('/vision', {
         templateUrl: 'views/_vision.html' 
         controller: 'VisionCtrl'
