@@ -1,10 +1,11 @@
-@CodeCtrl = ['$scope', 'conceptFactory', '$http', ($scope, conceptFactory, $http) ->
+@CodeCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
   concepts = conceptFactory
 
-  $scope.codeConcepts = [{"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."}, {"name": "Loading..."} ]
   init = ->  
-    $http.get('http://twitter-humanities.herokuapp.com/api/concepts').success (data) -> 
-     $scope.codeConcepts = data
-
+    $scope.codeConcepts = concepts.query {conceptName: 'concepts'}, ->
+      $.each($scope.codeConcepts, (index, concept) ->
+        concept.rank =->
+          if concept.ranked then "ranked"
+        )
   init()
 ]

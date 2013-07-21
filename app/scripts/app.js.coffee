@@ -1,4 +1,4 @@
-@App = angular.module('codingTheHumanitiesApp', [])
+@App = angular.module('codingTheHumanitiesApp', ['ngResource'])
   .config ($routeProvider) ->
     $routeProvider
       .when('/', {

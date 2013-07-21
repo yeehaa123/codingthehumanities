@@ -57,8 +57,16 @@ h1
 .animate-enter.animate-enter-active
   opacity: 1
 
+.animate-leave
+  +transition(1s linear all)
+  opacity: 0
+
+.animate-leave.animate-leave-active
+  opacity: 1
+
 section
   +padding-trailer(2, 30px)
+  height: 507px
 
   div.text
     font-family: 'Abel', sans-serif
@@ -67,6 +75,7 @@ section
     height: 502px
     padding: 20px
     margin-top: 5px
+    margin-bottom: 5px
 
     h3
       font-family: 'Abel', sans-serif
@@ -101,6 +110,7 @@ div.span6
     +adjust-font-size-to(24px)
     +adjust-leading-to(5, 24px)
     color: $base1_5
+    // color: $base3
 
   div.ranked
     color: $base02
