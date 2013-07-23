@@ -4,4 +4,4 @@
   scope : {
     list: "="
   },
-  template: "<div class='span6'><div ng-repeat='concept in list' class='span2 {{concept.rank()}}'>{{ concept.name }}</div></div>"
+  template: "<div class='span6'><div ng-repeat='concept in list' class='span2 {{concept.ranked}} {{concept.live}}'>{{ concept.name }}</div></div>"
