@@ -13,10 +13,10 @@
           if concept.ranked then "ranked"
 
     $scope.pusher = new Pusher('26da32a9b80140bcf9a7')
-    $scope.channel = $scope.pusher.subscribe('test_channel')
+    $scope.channel = $scope.pusher.subscribe('concepts')
 
   init()
-  $scope.channel.bind 'my_event', (data)-> 
+  $scope.channel.bind 'live', (data)-> 
     $scope.$apply ->
       console.log($scope.concepts)
       $.each $scope.pastConcepts, (index, concept) ->
