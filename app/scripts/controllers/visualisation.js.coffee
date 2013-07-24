@@ -5,12 +5,10 @@
     $scope.pastConcepts = concepts.query {conceptName: 'past_concepts'}, ->
       $.each $scope.pastConcepts, (index, concept) ->
         concept.ranked = "ranked" if concept.ranked
-        concept.live = ""
 
     $scope.futureConcepts = concepts.query {conceptName: 'future_concepts'}, ->
       $.each $scope.futureConcepts, (index, concept) ->
-        concept.rank =->
-          if concept.ranked then "ranked"
+        concept.ranked = "ranked" if concept.ranked
 
     $scope.pusher = new Pusher('26da32a9b80140bcf9a7')
     $scope.channel = $scope.pusher.subscribe('concepts')
