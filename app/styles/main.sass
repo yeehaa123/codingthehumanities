@@ -71,10 +71,12 @@ section
     font-family: 'Abel', sans-serif
     background-color: $base1
     +box-sizing(border-box)
-    height: 502px
+    height: 500px
     padding: 20px
-    margin-top: 5px
-    margin-bottom: 5px
+    margin-top: 6px
+    margin-bottom: 6px
+    margin-left: 26px
+    margin-right: 0
 
     h3
       font-family: 'Abel', sans-serif
@@ -83,6 +85,12 @@ section
   .span6
     list-style-type: none
 
+    &:nth-child(2)
+      float: right    
+      margin-right: 0
+      margin-left: 0px
+
+
     .span2, .menu_item
       font-weight: 300
       text-align: center
@@ -90,7 +98,7 @@ section
       +adjust-leading-to(5, 24px)
       color: $base1_5
       // color: $base3
-      background: $base2
+      background: $red
     
     .span2
       margin: 6px 6px 6px 6px
@@ -98,15 +106,12 @@ section
     .menu_item
       color: $base02
       background: $base2
-      margin: 6px 0px 12px 6px
+      margin: 6px 6px 12px 0px
 
       &:hover
         color: $base3
         background: $red
 
-  .span6:nth-child(2)
-    float: right    
-    margin-right: 0
 
   div.ranked
     color: $base02
