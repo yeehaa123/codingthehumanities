@@ -49,7 +49,6 @@ h1
     &:hover
       +unstyled-link
 
-
 .animate-enter
   +transition(1s linear all)
   opacity: 0
@@ -81,11 +80,47 @@ section
       font-family: 'Abel', sans-serif
       color: $base3
 
+  .span6
+    list-style-type: none
+
+    .span2, .menu_item
+      font-weight: 300
+      text-align: center
+      +adjust-font-size-to(24px)
+      +adjust-leading-to(5, 24px)
+      color: $base1_5
+      // color: $base3
+      background: $base2
+    
+    .span2
+      margin: 6px 6px 6px 6px
+
+    .menu_item
+      color: $base02
+      background: $base2
+      margin: 6px 0px 12px 6px
+
+      &:hover
+        color: $base3
+        background: $red
+
+  .span6:nth-child(2)
+    float: right    
+    margin-right: 0
+
+  div.ranked
+    color: $base02
+    background: $base2
+
+    div.live
+      color: $base3
+      background: $red
+
 footer
   border-top: 2px solid $red
 
-  div.span3
-    margin: 0 7px 0 7px
+  .span6
+    margin: 0 5px  0 5px
     text-align: center
     background-color: $base03
     color: $base3
@@ -93,29 +128,12 @@ footer
     +adjust-leading-to(2, 18px)
     +leader(1, 18px)
 
+    &:nth-child(2)
+      float: right  
+
     a
       +unstyled-link
 
     &:hover
       background-color: $red
       color: $base3
-
-div.span6
-  list-style-type: none
-
-  div.span2
-    margin: 6px 6px 6px 6px
-    font-weight: 300
-    text-align: center
-    +adjust-font-size-to(24px)
-    +adjust-leading-to(5, 24px)
-    color: $base1_5
-    // color: $base3
-
-  div.ranked
-    color: $base02
-    background: $base2
-
-  div.live
-    color: $base3
-    background: $red
