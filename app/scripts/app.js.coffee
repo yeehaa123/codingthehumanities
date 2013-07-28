@@ -22,4 +22,3 @@
       }).otherwise({
         redirectTo: '/' 
       })
-
