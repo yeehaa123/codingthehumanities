@@ -4,7 +4,8 @@ $base01:    #586e75
 $base00:    #657b83
 $base0:     #839496
 $base1:     #93a1a1
-$base1_5:   #DCDACB
+// $base1_5:   #DCDACB
+$base1_5:   #D0D0C4
 $base2:     #eee8d5
 $base3:     #fdf6e3
 $yellow:    #b58900
@@ -97,7 +98,15 @@ section
       +adjust-font-size-to(24px)
       +adjust-leading-to(5, 24px)
       color: $base1_5
-      // color: $base3
+      // color: $base2
+
+      &.ranked
+        color: $base02
+        background: $base2
+
+      &.live
+        color: $base3
+        background: $red
     
     .span2
       margin: 6px 6px 6px 6px
@@ -110,15 +119,6 @@ section
       &:hover
         color: $base3
         background: $red
-
-
-  div.ranked
-    color: $base02
-    background: $base2
-
-    div.live
-      color: $base3
-      background: $red
 
 footer
   border-top: 2px solid $red
