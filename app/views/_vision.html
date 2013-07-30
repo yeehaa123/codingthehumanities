@@ -2,8 +2,4 @@
   <h3>{{ currentConcept.name }}</h3>
   <div ng-bind-html-unsafe="currentConcept.description"></div> 
 </div>
-<div class='span6 menu'>
-  <div ng-repeat='concept in visionConcepts' class='menu_item {{concept.ranked}} {{concept.live}}' ng-click='setCurrentConcept(concept)'>
-    {{ concept.name }}
-</div>
-</div>
+<menu list="visionConcepts" click-menu-link="setCurrentConcept(concept)"></menu>

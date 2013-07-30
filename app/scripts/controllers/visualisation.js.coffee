@@ -5,7 +5,6 @@
     $scope.pastConcepts = concepts.query {conceptName: 'past_concepts'}, ->
       $.each $scope.pastConcepts, (index, concept) ->
         concept.ranked = "ranked" if concept.ranked
-        console.log concept
 
     $scope.futureConcepts = concepts.query {conceptName: 'future_concepts'}, ->
       $.each $scope.futureConcepts, (index, concept) ->
@@ -15,6 +14,7 @@
     $scope.channel = $scope.pusher.subscribe('concepts')
 
   init()
+
   $scope.channel.bind 'live', (data)-> 
     $scope.$apply ->
       console.log($scope.concepts)

@@ -8,10 +8,8 @@
           if concept.ranked then "ranked"
         )
       $scope.currentConcept = $scope.visionConcepts[0]
-      console.log $scope.currentConcept
   init()
 
   $scope.setCurrentConcept = (concept) ->
     $scope.currentConcept = concept
-    console.log($scope.currentConcept)
 ]

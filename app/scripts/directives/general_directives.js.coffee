@@ -10,6 +10,7 @@
   restrict: "E",
   replace: true,
   scope : {
-    list: "="
+    list: "=",
+    clickMenuLink: "&"
   },
-  template: "<div class='span6 menu'><div ng-repeat='concept in list' class='menu_item {{concept.ranked}} {{concept.live}}' ng-click='setCurrentConcept(concept)'>{{ concept.name }}</div></div>"
+  template: "<div class='span6 menu'><div ng-repeat='concept in list' class='menu_item {{concept.ranked}} {{concept.live}}' ng-click='clickMenuLink({concept: concept})'>{{ concept.name }}</div></div>"
