@@ -21,4 +21,4 @@
   scope: {
     concept: "="
   },
-  template: "<div class='text span6'><h3>{{ concept.name }}</h3><div ng-bind-html-unsafe='concept.description'></div></div>"
+  template: "<div class='profile span6'><div class='box'><img ng-src='{{concept.image}}'/></div><h3>{{ concept.name }}</h3><div ng-bind-html-unsafe='concept.description'></div></div>"

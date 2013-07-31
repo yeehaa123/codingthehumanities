@@ -68,20 +68,47 @@ section
   +padding-trailer(2, 30px)
   height: 507px
 
-  div.text
+
+  h3
     font-family: 'Abel', sans-serif
+    color: $base3
+
+  .text, .profile
+    font-family: 'Abel', sans-serif
+    position: relative
     background-color: $base1
     +box-sizing(border-box)
     height: 500px
-    padding: 20px
     margin-top: 6px
     margin-bottom: 6px
     margin-left: 26px
     margin-right: 0
+  
+  .text
+    padding: 20px
+
+  .profile
+    .box
+      width: width
+      overflow: hidden
+      height: 230px
+
+    img
+      position: relative
+      top: -10px
+      +filter(blur(10px))
+
+    img:hover
+      +filter(blur(0px))
+
 
     h3
-      font-family: 'Abel', sans-serif
-      color: $base3
+      position: absolute
+      top: 180px
+      left: 15px
+
+    p
+      margin: 20px
 
   .span6
     list-style-type: none
@@ -90,7 +117,6 @@ section
       float: right    
       margin-right: 0
       margin-left: 0px
-
 
     .span2, .menu_item
       font-weight: 300
@@ -123,7 +149,7 @@ section
 footer
   border-top: 2px solid $red
 
-  .span6
+  .span4
     margin: 0 5px  0 5px
     text-align: center
     background-color: $base03
@@ -133,6 +159,8 @@ footer
     +leader(1, 18px)
 
     &:nth-child(2)
+      margin-left: 10px
+    &:nth-child(3)
       float: right  
 
     a
