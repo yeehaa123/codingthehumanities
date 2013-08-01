@@ -9,7 +9,6 @@ $base1_5:   #D0D0C4
 $base2:     #eee8d5
 $base3:     #fdf6e3
 $yellow:    #b58900
-$red:       #cb4b16
 $red:       #dc322f
 $magenta:   #d33682
 $violet:    #6c71c4
@@ -19,7 +18,7 @@ $green:     #859900
 
 $bodyBackground: $base3
 $headingsColor: $base03
-$textColor: $base02
+$textColor: $base03
 
 @import "bootstrap-sass/lib/bootstrap"
 @import "compass"
@@ -28,6 +27,10 @@ $textColor: $base02
 $base-font-size: 18px
 $base-line-height: 30px
 +establish-baseline
+
+
+$width: 960px
+$view-height: 507px
 
 body
   font-family: 'Codystar', cursive
@@ -49,6 +52,7 @@ h1
 
     &:hover
       +unstyled-link
+      color: $red
 
 .animate-enter
   +transition(1s linear all)
@@ -65,14 +69,13 @@ h1
   opacity: 1
 
 section
+  position: relative
   +padding-trailer(2, 30px)
-  height: 507px
-
-
-  h3
-    font-family: 'Abel', sans-serif
-    color: $base3
-
+  height: $view-height
+  
+  &.row
+    margin-left: 0px
+    
   .text, .profile
     font-family: 'Abel', sans-serif
     position: relative
@@ -81,50 +84,70 @@ section
     height: 500px
     margin-top: 6px
     margin-bottom: 6px
-    margin-left: 26px
-    margin-right: 0
-  
+
+    h3
+      font-family: 'Abel', sans-serif
+      color: $base3
+      +adjust-font-size-to(27px)
+      padding: 5px 20px
+      background-color: $base03
+
   .text
     padding: 20px
+    margin-left: 6px
+    margin-right: 6px 
+
+    h3
+      position: absolute
+      top: 0
+      left: 0
+      margin: 0
+
+    p
+      margin-top: 30px
 
   .profile
+    margin-right: 6px
+    float: right
+
     .box
       width: width
       overflow: hidden
-      height: 230px
+      height: 240px
 
     img
       position: relative
       top: -10px
-      +filter(blur(10px))
+      +filter(sepia(30%))
 
-    img:hover
-      +filter(blur(0px))
-
+    &:hover
+      img
+        +filter(sepia(100%))
 
     h3
       position: absolute
-      top: 180px
-      left: 15px
+      top: 195px
 
     p
       margin: 20px
 
-  .span6
-    list-style-type: none
+    p:first-child
+      margin-top: 35px
 
+  .menu
+    margin-right: 0px 
+    margin-left: 0px
+
+  .span6
     &:nth-child(2)
-      float: right    
-      margin-right: 0
+      list-style-type: none
       margin-left: 0px
 
     .span2, .menu_item
       font-weight: 300
       text-align: center
       +adjust-font-size-to(24px)
-      +adjust-leading-to(5, 24px)
       color: $base1_5
-      // color: $base2
 
       &.ranked
         color: $base02
@@ -136,15 +159,25 @@ section
     
     .span2
       margin: 6px 6px 6px 6px
+      +adjust-leading-to(5, 24px)
 
     .menu_item
       color: $base02
       background: $base2
-      margin: 6px 6px 12px 0px
+      margin: 6px 5px 6px 5px
+      +adjust-leading-to(4, 24px)
 
       &:hover
         color: $base3
         background: $red
+
+  .welcome
+    position: absolute
+    top: $view-height/2 - 190px
+    left: $width/2 - 250px
+    width: 500px
+    height: 380px
+    background: $base1
 
 footer
   border-top: 2px solid $red

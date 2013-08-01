@@ -1,4 +1,3 @@
-@MainCtrl = ['$scope', 'conceptFactory', ($scope, conceptFactory) ->
-
+@MainCtrl = ['$scope', ($scope) ->
   $scope.title = "Coding the Humanities"
 ]
