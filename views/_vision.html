@@ -1,0 +1,5 @@
+<div class="text span6">
+  <h3>{{ currentConcept.name }}</h3>
+  <div ng-bind-html-unsafe="currentConcept.description"></div> 
+</div>
+<menu list="visionConcepts" click-menu-link="setCurrentConcept(concept)"></menu>
