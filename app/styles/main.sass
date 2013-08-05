@@ -55,7 +55,7 @@ h1
       color: $red
 
 .animate-enter
-  +transition(1s linear all)
+  +transition(s linear all)
   opacity: 0
 
 .animate-enter.animate-enter-active
@@ -76,7 +76,7 @@ section
   &.row
     margin-left: 0px
     
-  .text, .profile
+  .text, .profile, .welcome
     font-family: 'Abel', sans-serif
     position: relative
     background-color: $base1
@@ -90,7 +90,7 @@ section
       color: $base3
       +adjust-font-size-to(27px)
       padding: 5px 20px
-      background-color: $base03
+      background-color: $base02
 
   .text
     padding: 20px
@@ -105,9 +105,49 @@ section
 
     p
       margin-top: 30px
+  
+  .welcome
+    position: absolute
+    padding: 20px
+    width: 620px
+    height: 244px
+    left: 152px
+    top: 128px
+    margin-left: 6px
+    margin-right: 6px 
+
+    h3
+      position: absolute
+      margin: 0
+      left: 0
+      bottom: 0
+
+    p
+      margin-top: 30px
+
+    a
+      font-family: 'Abel', sans-serif
+      font-style: bold
+      color: $base3
+      +adjust-font-size-to(18px)
+      position: absolute
+      padding: 1px 10px 3px 10px
+      top: 0
+      right: 0
+      color: $base3
+      background-color: $base02 
+
+      &:hover
+        +unstyled-link
+        background-color: $red
+        color: $base3
+
+    .welcome.false
+      display: none
 
   .profile
     margin-right: 6px
+    margin-left: 0px
     float: right
 
     .box
@@ -131,53 +171,50 @@ section
     p
       margin: 20px
 
-    p:first-child
+    &:first-child
       margin-top: 35px
+
 
   .menu
     margin-right: 0px 
     margin-left: 0px
+    
+  .concepts
+    margin-left: 0px
 
-  .span6
     &:nth-child(2)
       list-style-type: none
-      margin-left: 0px
+      float: right
+      margin-right: 0px
 
-    .span2, .menu_item
-      font-weight: 300
-      text-align: center
-      +adjust-font-size-to(24px)
-      color: $base1_5
+  .span2, .menu_item
+    font-weight: 300
+    text-align: center
+    +adjust-font-size-to(24px)
+    color: $base1_5
 
-      &.ranked
-        color: $base02
-        background: $base2
-
-      &.live
-        color: $base3
-        background: $red
-    
-    .span2
-      margin: 6px 6px 6px 6px
-      +adjust-leading-to(5, 24px)
-
-    .menu_item
+    &.ranked
       color: $base02
       background: $base2
-      margin: 6px 5px 6px 5px
-      +adjust-leading-to(4, 24px)
 
-      &:hover
-        color: $base3
-        background: $red
+    &.live
+      color: $base3
+      background: $red
+  
+  .span2
+    margin: 6px 6px 6px 6px
+    +adjust-leading-to(5, 24px)
 
-  .welcome
-    position: absolute
-    top: $view-height/2 - 190px
-    left: $width/2 - 250px
-    width: 500px
-    height: 380px
-    background: $base1
+  .menu_item
+    color: $base02
+    background: $base2
+    margin: 6px 5px 6px 5px
+    +adjust-leading-to(4, 24px)
+
+    &:hover
+      color: $base3
+      background: $red
+
 
 footer
   border-top: 2px solid $red

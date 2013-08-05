@@ -4,7 +4,7 @@
   scope: {
     list: "="
   },
-  template: "<div class='span6'><div ng-repeat='concept in list' class='span2 {{concept.ranked}} {{concept.live}}'>{{ concept.name }}</div></div>"
+  template: "<div class='concepts span6'><div ng-repeat='concept in list' class='span2 {{concept.ranked}} {{concept.live}}'>{{ concept.name }}</div></div>"
 
 @App.directive 'menu', ->
   restrict: "E",
