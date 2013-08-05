@@ -15,6 +15,15 @@
   },
   template: "<div class='span6 menu'><div ng-repeat='concept in list' class='span6 menu_item {{concept.ranked}} {{concept.live}}' ng-click='clickMenuLink({concept: concept})'>{{ concept.name }}</div></div>"
 
+@App.directive 'codemenu', ->
+  restrict: "E",
+  replace: true,
+  scope: {
+    list: "=",
+    clickMenuLink: "&"
+  },
+  template: "<div class='span6 menu'><div ng-repeat='concept in list' class='span3 menu_item code {{concept.ranked}} {{concept.live}}' ng-click='clickMenuLink({concept: concept})'>{{ concept.name }}</div></div>"
+
 @App.directive 'profile', ->
   restrict: "E",
   replace: true,

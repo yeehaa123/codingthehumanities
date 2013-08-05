@@ -55,7 +55,7 @@ h1
       color: $red
 
 .animate-enter
-  +transition(s linear all)
+  +transition(0.5s linear all)
   opacity: 0
 
 .animate-enter.animate-enter-active
@@ -171,6 +171,9 @@ section
     p
       margin: 20px
 
+    p:nth-child(1)
+      margin-top: 30px
+
     &:first-child
       margin-top: 35px
 
@@ -210,6 +213,9 @@ section
     background: $base2
     margin: 6px 5px 6px 5px
     +adjust-leading-to(4, 24px)
+    
+  .code
+    +adjust-leading-to(2.65, 24px)
 
     &:hover
       color: $base3
