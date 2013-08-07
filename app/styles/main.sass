@@ -22,7 +22,7 @@ $textColor: $base03
 
 @import "bootstrap-sass/lib/bootstrap"
 @import "compass"
-@import url(http://fonts.googleapis.com/css?family=Abel|Codystar|Gudea)
+@import url(http://fonts.googleapis.com/css?family=Abel|Codystar)
 
 $base-font-size: 18px
 $base-line-height: 30px
@@ -122,8 +122,11 @@ section
       left: 0
       bottom: 0
 
-    p
-      margin-top: 30px
+    h4
+      +adjust-font-size-to(24px)
+      +leader(0, 24px)
+      +trailer(1, 24px)
+      color: $base3
 
     a
       font-family: 'Abel', sans-serif
@@ -213,6 +216,10 @@ section
     background: $base2
     margin: 6px 5px 6px 5px
     +adjust-leading-to(4, 24px)
+
+    &:hover
+      color: $base3
+      background: $red
     
   .code
     +adjust-leading-to(2.65, 24px)
