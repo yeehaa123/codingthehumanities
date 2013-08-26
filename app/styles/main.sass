@@ -4,7 +4,6 @@ $base01:    #586e75
 $base00:    #657b83
 $base0:     #839496
 $base1:     #93a1a1
-// $base1_5:   #DCDACB
 $base1_5:   #D0D0C4
 $base2:     #eee8d5
 $base3:     #fdf6e3
@@ -103,9 +102,15 @@ section
       left: 0
       margin: 0
 
-    p
+    p:nth-child(1)
       margin-top: 30px
-  
+    
+    ol, ul
+      margin-left: 16px
+      li
+        p:nth-child(1) 
+          +leader(0)
+
   .welcome
     position: absolute
     padding: 20px
