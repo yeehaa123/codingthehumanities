@@ -133,6 +133,10 @@ section
       +trailer(1, 24px)
       color: $base3
 
+    em
+      font-style: normal
+      color: $red
+
     a
       font-family: 'Abel', sans-serif
       font-style: bold
@@ -176,8 +180,12 @@ section
       position: absolute
       top: 195px
 
-    p
+    p, li
       margin: 20px
+
+    li
+      +trailer(0)
+      +leader(0)
 
     p:nth-child(1)
       margin-top: 30px
